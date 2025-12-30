@@ -1,50 +1,74 @@
-# [PROJECT_NAME] Constitution
+# 3D Things - Platform Constitution
 <!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Simplicity and Clarity
+Prefer straightforward, readable code over premature abstraction
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Payload CMS as System of Record
+Treat Payload CMS as the primary backend and data store
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Server-Side Business Logic
+All pricing, variants, and order validation must execute server-side only
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Statelessness
+Frontend components must be stateless and trust no client-provided pricing information
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. TypeScript Everywhere
+Enforce type safety across all codebases
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### VI. Extensibility First
+Design for easy extension of features like variants, made-to-order options, and automation workflows
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### VII. Vendor Neutrality
+Minimize vendor lock-in where technically feasible
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### VIII. Explicit Schemas
+Favor explicit data definitions and validation over implicit behavior
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### IX. Production Readiness
+Ensure all components are production-grade rather than demo-ready
+
+## Technical Architecture
+
+### Backend
+- Primary backend: Payload CMS
+- All business logic executed server-side only
+- Strict API boundaries with no client-side manipulation of critical values (pricing, inventory)
+
+### Frontend
+- Stateless architecture
+- No reliance on client-provided pricing or validation data
+- Type-safe components using TypeScript
+- Server-rendered where possible for performance and SEO
+
+## Implementation Guidelines
+
+1. **Data Flow**: Data should flow from Payload CMS → server-side processing → frontend presentation
+2. **Validation Strategy**: Use explicit schema definitions with comprehensive validation at all boundaries
+3. **Extensibility Points**:
+   - Variants: Support multiple product configurations (size, color, material)
+   - Made-to-Order: Enable custom specifications for individual orders
+   - Automation: Build extensible workflow systems for order processing
+
+## Compliance and Standards
+
+1. All code must follow established TypeScript standards and practices
+2. No vendor-specific dependencies unless absolutely necessary
+3. Every feature must be production-ready with appropriate error handling and logging
+4. Documentation should reflect operational realities, not hypothetical scenarios
+
+## Development Workflow
+
+- TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced
+- Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas
+- All PRs/reviews must verify compliance with these principles
+- Complexity must be justified and documented
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+Constitution supersedes all other practices; Amendments require documentation, approval, migration plan
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+All PRs/reviews must verify compliance; Complexity must be justified; Use .specify/memory/constitution.md for runtime development guidance
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-30 | **Last Amended**: 2025-12-30
