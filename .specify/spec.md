@@ -77,7 +77,24 @@ A production-grade ecommerce system for selling made-to-order 3D printed product
 - Payment processing is delegated to third-party provider (e.g., Stripe)
 - Order state transitions must be explicit:
   - Cart → Pending Payment → Payment Confirmed → Processing → Shipped → Delivered
-- All state changes must be auditable
+  - Cancelled state available from Pending Payment or Processing states
+- All state changes must be auditable with timestamps and user identification
+
+### State Transition Validation
+- Each state transition requires specific validation criteria:
+  - Pending Payment: Cart validated, payment initiated
+  - Payment Confirmed: External provider confirms payment success
+  - Processing: Order details verified, fulfillment preparation started
+  - Shipped: Tracking information provided, delivery status updated
+  - Delivered: Customer confirmation received or delivery timestamp
+  - Cancelled: Reason documented, refund process initiated if required
+
+### Audit Requirements
+- All state transitions must log:
+  - Timestamp of change
+  - User/actor responsible for change
+  - Previous and new states
+  - Reason for transition (where applicable)
 
 ### API and Interface Requirements
 - RESTful API for web frontend consumption
@@ -130,6 +147,23 @@ A production-grade ecommerce system for selling made-to-order 3D printed product
 - Payment information is never stored in the system (delegated to third-party)
 - Admin access requires proper authentication and authorization
 - All API endpoints require appropriate security measures
+
+### Authentication Requirements
+- **Customer-facing**: No authentication required for browsing products or checkout process
+- **Admin interface**: Requires separate authentication/authorization system for managing products, variants, and orders
+- **Payment processing**: Delegated to external provider; system only receives payment confirmation
+
+### Authorization Patterns
+1. **Role-based access control**:
+   - Public users: Read-only access to product catalog 
+   - Admin users: Full administrative privileges for all management functions
+2. **State transition authorization**: Order status changes require proper authorization and audit logging
+
+### Access Control Requirements
+- Clear separation between public-facing functionality and admin-only operations  
+- API endpoint protection for all admin operations
+- Data isolation between customer and administrative interfaces
+- Audit logging for all order state transitions with timestamps, user identification, and change details
 
 ### Validation Requirements
 - Client-side inputs are always validated server-side
