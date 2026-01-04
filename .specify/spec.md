@@ -1,5 +1,11 @@
 # 3D Things - Ecommerce System Specification
 
+## Clarifications
+
+### Session 2025-01-01
+
+- Q: What are the specific data encryption requirements for customer information? → A: Customer data encrypted at rest with compliance to GDPR/CCPA requirements
+
 ## Overview
 A production-grade ecommerce system for selling made-to-order 3D printed products with configurable variants, server-side pricing validation, and third-party payment integration.
 
@@ -95,6 +101,7 @@ A production-grade ecommerce system for selling made-to-order 3D printed product
   - User/actor responsible for change
   - Previous and new states
   - Reason for transition (where applicable)
+- Customer data encryption requirements include compliance with GDPR/CCPA standards
 
 ### API and Interface Requirements
 - RESTful API for web frontend consumption
@@ -143,7 +150,7 @@ A production-grade ecommerce system for selling made-to-order 3D printed product
 ## Security Considerations
 
 ### Data Protection
-- All customer data must be protected with appropriate encryption
+- All customer data must be protected with appropriate encryption, including compliance with GDPR/CCPA requirements
 - Payment information is never stored in the system (delegated to third-party)
 - Admin access requires proper authentication and authorization
 - All API endpoints require appropriate security measures
