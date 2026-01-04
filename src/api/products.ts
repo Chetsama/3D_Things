@@ -23,7 +23,8 @@ export const getProductById = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     
-    const product = await payload.findById({
+    // Corrected the method call
+    const product = await payload.findByID({
       collection: 'products',
       id,
     });

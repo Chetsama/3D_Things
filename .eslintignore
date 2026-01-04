@@ -3,8 +3,3 @@ dist/
 build/
 *.log
 .env*
-.git/
-.DS_Store
-Thumbs.db
-*.tmp
-*.swp
