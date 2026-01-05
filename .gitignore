@@ -8,3 +8,5 @@ build/
 Thumbs.db
 *.tmp
 *.swp
+create-db-schema.ts
+db-schema.sql
