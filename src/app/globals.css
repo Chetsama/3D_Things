@@ -1,0 +1,133 @@
+/* Color Theme Swatches in Hex */
+.thing-1-hex {
+  color: #d942ff;
+}
+.thing-2-hex {
+  color: #ff738a;
+}
+.thing-3-hex {
+  color: #ff42d3;
+}
+.thing-4-hex {
+  color: #b06bff;
+}
+.thing-5-hex {
+  color: #ff4326;
+}
+.thing-6-hex {
+  color: #fcb3eb;
+}
+
+/* Color Theme Swatches in RGBA */
+.thing-1-rgba {
+  color: rgba(217, 66, 255, 1);
+}
+.thing-2-rgba {
+  color: rgba(255, 115, 138, 1);
+}
+.thing-3-rgba {
+  color: rgba(255, 66, 211, 1);
+}
+.thing-4-rgba {
+  color: rgba(176, 107, 255, 1);
+}
+.thing-5-rgba {
+  color: rgba(255, 67, 38, 1);
+}
+.thing-6-rgba {
+  color: rgba(252, 179, 235, 1);
+}
+
+/* Color Theme Swatches in HSLA */
+.thing-1-hsla {
+  color: hsla(287, 100, 62, 1);
+}
+.thing-2-hsla {
+  color: hsla(350, 100, 72, 1);
+}
+.thing-3-hsla {
+  color: hsla(313, 100, 62, 1);
+}
+.thing-4-hsla {
+  color: hsla(267, 100, 70, 1);
+}
+.thing-5-hsla {
+  color: hsla(8, 100, 57, 1);
+}
+.thing-6-hsla {
+  color: hsla(313, 92, 84, 1);
+}
+
+/* Define custom theme colors for MUI */
+:root {
+  --primary-color: #d942ff;
+  --secondary-color: #ff738a;
+  --accent-color-1: #ff42d3;
+  --accent-color-2: #b06bff;
+  --accent-color-3: #ff4326;
+  --accent-color-4: #fcb3eb;
+}
+
+/* Set background color */
+body {
+  background-color: white !important;
+}
+
+/* Apply custom colors to MUI components - Primary Buttons */
+.MuiButton-root.MuiButton-containedPrimary,
+.MuiButton-root.MuiButton-contained {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+.MuiButton-root.MuiButton-outlinedPrimary {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+}
+
+/* Apply primary color to various MUI components */
+.MuiTypography-h1,
+.MuiTypography-h2,
+.MuiTypography-h3,
+.MuiTypography-h4,
+.MuiTypography-h5,
+.MuiTypography-h6 {
+  color: var(--primary-color);
+}
+
+/* Card styling with accent colors */
+.MuiCard-root {
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(217, 66, 255, 0.2) !important;
+}
+
+/* Paper elevation styling */
+.MuiPaper-elevation3 {
+  box-shadow: 0 2px 10px rgba(217, 66, 255, 0.2) !important;
+}
+
+/* Button hover effects */
+.MuiButton-root:hover {
+  opacity: 0.9;
+}
+
+/* Chip styling with accent colors */
+.MuiChip-root.MuiChip-filledPrimary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Input field styling */
+.MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary-color) !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary-color) !important;
+}
+
+/* Table styling */
+.MuiTableHead-root th {
+  background-color: rgba(217, 66, 255, 0.1);
+  color: var(--primary-color);
+}

@@ -10,3 +10,4 @@ Thumbs.db
 *.swp
 create-db-schema.ts
 db-schema.sql
+.next/

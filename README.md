@@ -45,9 +45,12 @@ Before you begin, ensure you have met the following requirements:
 ### Running the Application
 
 1. Start the development server:
-   ```
-   npx ts-node src/index.ts
-   ```
+  ```
+    Backend
+        npx ts-node src/index.ts
+    Frontend
+        npx next dev --port 3001
+  ```
 
 2. The application will be available at:
     - Server: http://localhost:3000
