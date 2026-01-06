@@ -1,63 +1,3 @@
-/* Color Theme Swatches in Hex */
-.thing-1-hex {
-  color: #d942ff;
-}
-.thing-2-hex {
-  color: #ff738a;
-}
-.thing-3-hex {
-  color: #ff42d3;
-}
-.thing-4-hex {
-  color: #b06bff;
-}
-.thing-5-hex {
-  color: #ff4326;
-}
-.thing-6-hex {
-  color: #fcb3eb;
-}
-
-/* Color Theme Swatches in RGBA */
-.thing-1-rgba {
-  color: rgba(217, 66, 255, 1);
-}
-.thing-2-rgba {
-  color: rgba(255, 115, 138, 1);
-}
-.thing-3-rgba {
-  color: rgba(255, 66, 211, 1);
-}
-.thing-4-rgba {
-  color: rgba(176, 107, 255, 1);
-}
-.thing-5-rgba {
-  color: rgba(255, 67, 38, 1);
-}
-.thing-6-rgba {
-  color: rgba(252, 179, 235, 1);
-}
-
-/* Color Theme Swatches in HSLA */
-.thing-1-hsla {
-  color: hsla(287, 100, 62, 1);
-}
-.thing-2-hsla {
-  color: hsla(350, 100, 72, 1);
-}
-.thing-3-hsla {
-  color: hsla(313, 100, 62, 1);
-}
-.thing-4-hsla {
-  color: hsla(267, 100, 70, 1);
-}
-.thing-5-hsla {
-  color: hsla(8, 100, 57, 1);
-}
-.thing-6-hsla {
-  color: hsla(313, 92, 84, 1);
-}
-
 /* Define custom theme colors for MUI */
 :root {
   --primary-color: #d942ff;
@@ -70,7 +10,7 @@
 
 /* Set background color */
 body {
-  background-color: white !important;
+  background-color: var(--accent-color-4) !important;
 }
 
 /* Apply custom colors to MUI components - Primary Buttons */
